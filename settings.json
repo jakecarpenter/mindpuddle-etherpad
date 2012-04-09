@@ -1,0 +1,48 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  //Ip and port which etherpad should bind at
+  "ip": "0.0.0.0",
+  "port" : 9001,
+                
+                 
+  // An Example of MySQL Configuration
+   "dbType" : "mysql",
+   "dbSettings" : {
+                    "user"    : "etherpad", 
+                    "host"    : "localhost", 
+                    "password": "insecure", 
+                    "database": "etherpad"
+                  },
+  
+  
+  //the default text of a pad
+  "defaultPadText" : "",
+  
+  /* Users must have a session to access pads. This effectively allows only group pads to be accessed. */
+  "requireSession" : false,
+
+  /* Users may edit pads but not create new ones. Pad creation is only via the API. This applies both to group pads and regular pads. */
+  "editOnly" : false,
+  
+  /* if true, all css & js will be minified before sending to the client. This will improve the loading performance massivly, 
+     but makes it impossible to debug the javascript/css */
+  "minify" : false,
+
+  /* How long may clients use served javascript code? Without versioning this
+    is may cause problems during deployment. */
+  "maxAge" : 21600000, // 6 hours
+  
+  /* This is the path to the Abiword executable. Setting it to null, disables abiword.
+     Abiword is needed to enable the import/export of pads*/  
+  "abiword" : "\/usr\/bin\/abiword",
+  
+  /* This setting is used if you need http basic auth */
+   "httpAuth" : "user:pass",
+
+  /* The log level we are using, can be: DEBUG, INFO, WARN, ERROR */
+  "loglevel": "INFO"
+}
